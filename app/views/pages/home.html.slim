@@ -1,0 +1,13 @@
+h1 Welcome Home
+
+div
+  = form_for @signature, remote: true do |f|
+    = f.label :firstname, "First name"
+    = f.text_field :firstname
+    = f.label :lastname, "Last name"
+    = f.text_field :lastname
+    = f.label :email, "Email"
+    = f.text_field :email
+    = f.label :zipcode, "Zipcode"
+    = f.text_field :zipcode
+    = f.submit "Sign the Petition"
