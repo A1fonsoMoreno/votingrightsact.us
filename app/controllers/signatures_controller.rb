@@ -11,7 +11,7 @@ class SignaturesController < ApplicationController
   private
 
   def signature
-    @signature ||= Signature.find_or_initialize_by_email(signature_email)
+    @signature ||= Signature.find_or_initialize_by(email: signature_email)
   end
 
   def signature_params
