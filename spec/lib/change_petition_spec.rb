@@ -50,13 +50,23 @@ describe ChangePetition do
   end
 
   describe "#sign" do
-    it do
-      expect(Change::Requests::Client).to receive(:new).once
-      expect(signatures_collection).to receive(:add_signature)
-      change_petition.sign(signature)
+    context "when an exception is not thrown" do
+      it do
+        expect(Change::Requests::Client).to receive(:new).once
+        expect(signatures_collection).to receive(:add_signature)
+        change_petition.sign(signature)
+      end
     end
 
-    context "when all goes well"
+    context "when an exception is thrown" do
+      it do
+        expect(Change::Requests::Client).to receive(:new).once
+        expect(signatures_collection).to receive(:add_signature).and_throw(Change::Exceptions::ChangeException)
+        expect(signature).to receive(:change_org_error=)
+        expect(signature).to receive(:save)
+        change_petition.sign(signature)
+      end
+    end
   end
 
   describe "#signature_count" do
