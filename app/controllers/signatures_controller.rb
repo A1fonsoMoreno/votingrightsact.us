@@ -1,7 +1,7 @@
 class SignaturesController < ApplicationController
 
   def create
-    if signature.save
+    if save_signature
       respond_with_success
     else
       respond_with_failure
@@ -11,11 +11,19 @@ class SignaturesController < ApplicationController
   private
 
   def signature
-    @signature ||= Signature.new(signature_params)
+    @signature ||= Signature.find_or_initialize_by_email(signature_email)
   end
 
   def signature_params
     params.require(:signature).permit(:firstname, :lastname, :email, :zipcode)
+  end
+
+  def signature_email
+    signature_params.fetch(:email)
+  end
+
+  def save_signature
+    signature.update_attributes signature_params
   end
 
   def respond_with_success
