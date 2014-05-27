@@ -11,6 +11,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+Capybara.javascript_driver = :webkit
+
 RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "random"
