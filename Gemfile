@@ -24,4 +24,4 @@ gem 'guard-rspec', require: false, group: :test
 gem 'guard-livereload', require: false, group: [:development, :test]
 gem 'pry', group: [:development, :test]
 gem 'faker', group: :test
-gem 'factory_girl_rails', group: [:development, :test]
+gem 'factory_girl_rails', group: [:development, :test]gem 'smarty_streets', github: 'codingzeal/smarty_streets'
