@@ -1,1 +1,5 @@
 *.sqlite3
+.vagrant
+
+tmp/*
+log/*
