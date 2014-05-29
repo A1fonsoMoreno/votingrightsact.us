@@ -1,13 +1,95 @@
-h1 Welcome Home
+header.masthead
+  .row
+    h1 Protect Voting Rights
+    h2
+      | Pass Voting Rights Ammendment Act
+      span
+        | 2014
+section.petition
+  .row
+    p.petition-summary The Supreme Court removed essential protections of the Voting Rights Act. But we can modernize and strengthen those protections by passing the Voting Rights Amendment Act of 2014.
+    p.petition-cta Sign the petition and call your representative now!
 
-div
-  = form_for @signature, remote: true do |f|
-    = f.label :firstname, "First name"
-    = f.text_field :firstname
-    = f.label :lastname, "Last name"
-    = f.text_field :lastname
-    = f.label :email, "Email"
-    = f.text_field :email
-    = f.label :zipcode, "Zipcode"
-    = f.text_field :zipcode
-    = f.submit "Sign the Petition"
+    = form_for @signature, remote: true, class: "petition-form" do |f|
+      .form-fields
+        = f.label :firstname, "First name"
+        = f.text_field :firstname
+        = f.label :lastname, "Last name"
+        = f.text_field :lastname
+        = f.label :email, "Email"
+        = f.text_field :email
+        = f.label :zipcode, "Zipcode"
+        = f.text_field :zipcode
+      = f.submit "Sign the Petition", class: "btn-primary"
+      .fine-print
+        | Powered by Change.org. By signing, you accept Change.org’s 
+        a terms of service
+        |  and 
+        a privacy policy.
+
+    .video-link-block
+      a.video-link
+        h2.video-link-title Lets Not Go Back In Time...
+        p.video-link-description Learn about the Voting Rights Act of 1965
+
+section.the-problem
+  / TODO add SequenceJs slideshow
+  #sequence
+    ul.sequence-canvas
+      li.animate-in
+        .slide-1
+          blockquote
+            | "In 2012, blacks and Hispanics waited nearly twice as long in line to vote on average than whites"
+            footer 
+              | - MIT
+        img.my-image alt=("An image of me") src="my-image.jpg"
+      li
+        .slide-2
+          blockquote
+            | "At least 201,000 Florida voters did not cast ballots on Election Day 2012 because they were discouraged by long lines at polling places."
+            footer 
+              | - Orlando Sentinel
+
+section.call-tool
+  .row
+    h2.section-title Take Action
+    p It only takes two minutes to call your representative. Phone calls are more effective than emails and with our call tool, it couldn’t be easier.
+
+    a.btn-primary Call Representative
+
+    .phone-script-block
+      h3 Phone Script
+      p "I’m calling to let you know that I support  H.R. 3899, The Voting Rights Amendment Act of 2014. This bipartisan bill will require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes.  As your constituent, I ask that you cosponsor the VRA Amendment.""
+
+section.partners
+  .row
+    h2.section-title Partners
+
+section.about-vra
+  .row
+    h2.section-title About the Act
+    p The Voting Rights Act (VRA) is one of the most important pieces of civil rights legislation ever passed. But in 2013 the Supreme Court’s decision in Shelby County vs. Holder removed protections that required states with a history of discrimination to get federal approval before making election changes like moving polling places.
+    p However, the decision gave leaders in Congress the opportunity to create an updated VRA Amendment that will cover jurisdictions with recent evidence of discrimination. Introduced by Senator Patrick Leahy (D-Vt.) and Rep. Jim Sensenbrenner (R-Wisc.), the Voting Rights Amendment Act of 2014 will:
+    ul
+      li Require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes like redistricting, changes in election procedures close to an election, and the movement of polling places. This new formula would currently apply to Georgia, Louisiana, Mississippi and Texas.
+      li Requires all 50 states and their localities to give notice in local media and on the Internet of any actions related to significant election changes.
+      li The bill is bipartisan, bicameral, and compliant with the Supreme Court's ruling.
+      li 
+        | Read the Bill: 
+        a href="https://www.govtrack.us/congress/bills/113/hr3899" target="_blank"
+          | https://www.govtrack.us/congress/bills/113/hr3899
+
+footer.footer
+  .row
+    .medium-8.columns
+      .powered-by-companies.row
+        h3.powered-by-title Powered by
+        a.company.medium-4.columns
+          img.company-logo alt="Change.org"
+        a.company.medium-4.columns
+          img.company-logo alt="Long Distance Voter"
+        a.company.medium-4.columns
+          img.company-logo alt="Twilio"
+    .medium-4.columns
+      .copyright-information
+        p &copy; 2014 Voting Rights Ammendment Act of 2014
