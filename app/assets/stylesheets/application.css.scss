@@ -1,2 +1,10 @@
+@import "compass";
+@import "foundation/functions";
+@import "global/variables";
+@import "foundation";
 
-@import 'foundation';
+@import "global/all";
+@import "components/all";
+
+@import "sections/masthead";
+@import "sections/petition";

@@ -1,0 +1,58 @@
+$button-font-family: $body-font-family;
+$button-font-color: #fff;
+$button-font-size: 14px;
+$button-font-weight: 300;
+$button-radius: 4px;
+
+%btn {
+  @include transition(all .2s);
+  @include border-radius(4px);
+  border: none;
+  color: $button-font-color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  margin: 0;
+  padding: 8px 10px;
+  position: relative;
+  white-space: nowrap;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.19), inset 0 1px rgba(255,255,255,.5), inset 0 0 5px rgba(255,255,255,.31);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.19), inset 0 1px rgba(255,255,255,.5), inset 0 0 5px rgba(255,255,255,.31);
+  box-shadow: 0 1px 1px rgba(0,0,0,.19), inset 0 1px rgba(255,255,255,.5), inset 0 0 5px rgba(255,255,255,.31);
+  border: solid 1px #3b8e31;
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,.34), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,.34), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,.34), rgba(255,255,255,0));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.34), rgba(255,255,255,0));
+  &:hover, &:focus {
+    color: $button-font-color;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-primary {
+  @extend %btn;
+  background-color: #408b37;
+  letter-spacing: .05em;
+  padding: 15px;
+  text-align: center;
+  &:hover {
+    background-color: darken(#408b37, 5%);
+    color: $button-font-color;
+  }
+  &.is-disabled {
+    background-color: desaturate(#408b37, 30%);
+    color: desaturate(darken(#408b37, 15%), 30%);
+    cursor: default;
+    &:hover {
+      background-color: desaturate(#408b37, 30%);
+      color: desaturate(darken(#408b37, 15%), 30%);
+    }
+  }
+}
