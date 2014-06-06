@@ -1,0 +1,42 @@
+.the-problem {
+  background: #74a25a image-url("voting-lines.jpg");
+  background-attachment: scroll;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 700px;
+  position: relative;
+}
+
+.problem-quote-1 {
+  position: absolute;
+  left: 10%;
+  top: 60px;
+  width: 57%;
+}
+
+.problem-quote-2 {
+  position: absolute;
+  right: 5%;
+  top: 500px;
+  width: 75%;
+}
+
+.quote {
+  border: none;
+  color: white;
+  color: #fff;
+  font-family: "Futura Std", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 0;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0,0,0,.75);
+}
+.quote-author {
+  font-size: .8em;
+  padding-right: 50px;
+  text-align: right;
+}
