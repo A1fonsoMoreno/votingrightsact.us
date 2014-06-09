@@ -24,3 +24,4 @@ gem 'pry-debugger', group: [:development, :test]
 gem 'faker', group: :test
 gem 'factory_girl_rails', group: [:development, :test]
 gem 'smarty_streets', github: 'codingzeal/smarty_streets'
+gem "sunlight", "1.1.0"
