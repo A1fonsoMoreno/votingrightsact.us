@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/codingzeal/smarty_streets.git
+  revision: 208035593fd91971f3aa8ac9798dec59bb766437
+  specs:
+    smarty_streets (0.1.1)
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,6 +58,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    columnize (0.8.9)
     compass (0.12.4)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -58,6 +66,12 @@ GEM
     compass-rails (1.1.7)
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
+    debugger (1.6.8)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.5)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.5)
     diff-lcs (1.2.5)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -127,6 +141,9 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-debugger (0.2.2)
+      debugger (~> 1.3)
+      pry (~> 0.9.10)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -227,11 +244,12 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
-  pry
+  pry-debugger
   rails (= 4.1.0)
   rspec-rails
   sass-rails
   sdoc (~> 0.4.0)
   slim-rails
+  smarty_streets!
   sqlite3
   uglifier (>= 1.3.0)
