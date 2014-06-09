@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523234006) do
+ActiveRecord::Schema.define(version: 20140608162419) do
+
+  create_table "legislators", force: true do |t|
+    t.string   "zipcode"
+    t.text     "representation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "legislators", ["zipcode"], name: "index_legislators_on_zipcode"
 
   create_table "signatures", force: true do |t|
     t.string   "firstname"
