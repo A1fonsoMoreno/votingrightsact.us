@@ -11,13 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608162419) do
+ActiveRecord::Schema.define(version: 20140609230054) do
 
   create_table "legislators", force: true do |t|
     t.string   "zipcode"
     t.text     "representation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "body"
+    t.string   "bioguide_id"
+    t.string   "title"
+    t.string   "gender"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "congress_office"
+    t.string   "state"
+    t.string   "party"
+    t.string   "district"
+    t.string   "senate_class"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.string   "twitter_id"
+    t.string   "votesmart_id"
+    t.string   "website"
+    t.string   "webform"
+    t.string   "youtube_url"
+    t.string   "congresspedia_url"
+    t.string   "facebook_id"
+    t.string   "fec_id"
+    t.string   "govtrack_id"
   end
 
   add_index "legislators", ["zipcode"], name: "index_legislators_on_zipcode"
@@ -27,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140608162419) do
     t.string   "lastname"
     t.string   "email"
     t.string   "zipcode"
-    t.text     "change_org_error"
+    t.text     "change_org_error", default: "f"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
