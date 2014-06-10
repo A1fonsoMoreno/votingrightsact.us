@@ -1,4 +1,7 @@
 class Legislator < ActiveRecord::Base
+
+  has_many :calls
+
   def self.lookup_by_zipcode(zipcode)
     legislators = Legislator.where(zipcode: zipcode)
 

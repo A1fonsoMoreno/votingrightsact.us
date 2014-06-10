@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609230054) do
+ActiveRecord::Schema.define(version: 20140610212519) do
+
+  create_table "calls", force: true do |t|
+    t.string   "number"
+    t.integer  "legislator_id"
+    t.integer  "signature_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "survey_body"
+    t.string   "sid"
+    t.boolean  "ended"
+    t.integer  "call_duration"
+  end
+
+  add_index "calls", ["legislator_id"], name: "index_calls_on_legislator_id"
+  add_index "calls", ["signature_id"], name: "index_calls_on_signature_id"
 
   create_table "legislators", force: true do |t|
     t.string   "zipcode"

@@ -8,7 +8,7 @@ header.masthead
           | 2014
 section#petition.petition
   .row
-    .medium-6.columns.medium-offset-1
+    .medium-6.columns.medium-offset-1.petition-wrapper
       p.petition-summary The Supreme Court removed essential protections of the Voting Rights Act. But we can modernize and strengthen those protections by passing the Voting Rights Amendment Act of 2014.
       p.petition-cta Sign the petition and call your representative now!
       = form_for @signature, html: { class: "petition-form" } do |f|
@@ -39,6 +39,7 @@ section#petition.petition
               a terms of service
               |  and
               a privacy policy.
+      p.thank-you-message style="display:none;" Thank you for signing the petition
 
   .row
     .medium-11.columns.medium-offset-1
@@ -73,7 +74,7 @@ section#call-tool.call-tool
   .row
     .medium-7.columns
       .call-actions-container
-        = form_tag legislators_lookup_path, method: :get, remote: true, class: "zipcode-form" do
+        = form_tag legislators_lookup_path, method: :get, class: "zipcode-form" do
           = label_tag :zipcode, "Enter your zip code", class: "form-section-title"
           = text_field_tag :zipcode, nil, id: "zipcode", class: "zipcode", pattern: '\d*', placeholder: "zip code"
           = button_tag "Submit", class: "btn-primary"
@@ -84,60 +85,45 @@ section#call-tool.call-tool
                 p.form-section-title How'd It Go?
                 textarea#survey cols="5" placeholder=("Listened right away!...") rows="5"
                 button.btn-primary Send Feedback
-              = form_tag calls_path, method: :post, remote: true, id: "new_call is-hidden" do
-                p.form-section-title Call Using My Phone
-                p.form-section-description
-                  | Enter your phone number and we'll connect you (free of charge) to Peter. Be sure to review the sample script.
-                .control-group
-                  = text_field_tag :area_code, nil, id: "call_area_code", class: "input-mini first", maxlength: "3", placeholder: "555"
-                  = text_field_tag :prefix_number, nil, id: "call_prefix_number", class: "input-mini", maxlength: "3", placeholder: "555"
-                  = text_field_tag :line_number, nil, id: "call_line_number", class: "input-mini last", maxlength: "4", placeholder: "555"
-                  = submit_tag "Call Now", class: "btn btn-submit btn-primary"
+              .call-form
+                = form_tag calls_path, method: :post, remote: true, class: "new_call is-hidden" do
+                  p.form-section-title Call Using My Phone
+                  p.form-section-description
+                    | Enter your phone number and we'll connect you (free of charge) to Peter. Be sure to review the sample script.
+                  .control-group
+                    = text_field_tag :area_code, nil, id: "call_area_code", class: "input-mini first", maxlength: "3", placeholder: "555"
+                    = text_field_tag :prefix_number, nil, id: "call_prefix_number", class: "input-mini", maxlength: "3", placeholder: "555"
+                    = text_field_tag :line_number, nil, id: "call_line_number", class: "input-mini last", maxlength: "4", placeholder: "555"
+                    = hidden_field_tag :legislator_id, nil, id: "call_legislator_id"
+                    = hidden_field_tag :signature_id, nil, id: "call_signature_id"
+                    = submit_tag "Call Now", class: "btn btn-submit btn-primary"
             .medium-7.columns
               #rep-info.row
                 .small-5.columns
                   .rep-image-container
-                    img src="http://www.cispapetition.org/assets/legislators/D000191.jpg"
+                    img src=""
                 .details.small-7.columns
-                  p.person.form-section-title Peter DeFazio
+                  p.person.form-section-title ""
                   p.stat
                     span.aligner
                       = fa_icon "twitter", base: "square-o"
-                    a href="https://twitter.com/intent/tweet?text=As%20your%20constituent%20I%20ask%20you%20vote%20against%20%23CISPA%20%40RepPeterDeFazio%20and%20respect%20my%20privacy%20on%20the%20internet!"  RepPeterDeFazio
+                    a.twitter href="#twitter"  Twitter
                   p.stat
                     span.aligner
                       = fa_icon "facebook", base: "square-o"
-                    a href="http://facebook.com/94324364811" target="_blank"  Facebook
+                    a.facebook href="#facebook" target="_blank"  Facebook
                   p.stat
                     span.aligner
                       = fa_icon "home", base: "square-o"
-                    a href="http://www.defazio.house.gov" target="_blank"  Website
+                    a.website href="#website" target="_blank"  Website
                   p.stat
                     span.aligner
                       = fa_icon "phone", base: "square-o"
-                    a href="tel:202-225-6416 "  202-225-6416
+                    a.telephone href="#phone"
     .medium-4.columns
       .phone-script-block
         h3.form-section-title Here's a sample script:
-        p "I’m calling to let you know that I support  H.R. 3899, The Voting Rights Amendment Act of 2014. This bipartisan bill will require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes.  As your constituent, I ask that you cosponsor the VRA Amendment.""
-
-/ section#partners.partners
-/   .row
-/     h2.section-title Partners
-
-/ section#about-vra.about-vra
-/   .row
-/     h2.section-title About the Act
-/     p The Voting Rights Act (VRA) is one of the most important pieces of civil rights legislation ever passed. But in 2013 the Supreme Court’s decision in Shelby County vs. Holder removed protections that required states with a history of discrimination to get federal approval before making election changes like moving polling places.
-/     p However, the decision gave leaders in Congress the opportunity to create an updated VRA Amendment that will cover jurisdictions with recent evidence of discrimination. Introduced by Senator Patrick Leahy (D-Vt.) and Rep. Jim Sensenbrenner (R-Wisc.), the Voting Rights Amendment Act of 2014 will:
-/     ul
-/       li Require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes like redistricting, changes in election procedures close to an election, and the movement of polling places. This new formula would currently apply to Georgia, Louisiana, Mississippi and Texas.
-/       li Requires all 50 states and their localities to give notice in local media and on the Internet of any actions related to significant election changes.
-/       li The bill is bipartisan, bicameral, and compliant with the Supreme Court's ruling.
-/       li
-/         | Read the Bill:
-/         a href="https://www.govtrack.us/congress/bills/113/hr3899" target="_blank"
-/           | https://www.govtrack.us/congress/bills/113/hr3899
+        p "I’m calling to let you know that I support  H.R. 3899, The Voting Rights Amendment Act of 2014. This bipartisan bill will require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes.  As your constituent, I ask that you co-sponsor the VRA Amendment."
 
 footer.footer
   .row
