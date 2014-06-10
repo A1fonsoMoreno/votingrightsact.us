@@ -10,7 +10,7 @@ class LegislatorsController < ApplicationController
       return
     else
       @legislator = legislators[rand(legislators.length)]
-      respond_with @legislator, methods: :image
+      respond_with @legislator
     end
   end
 
