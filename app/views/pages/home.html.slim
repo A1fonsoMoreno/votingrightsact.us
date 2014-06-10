@@ -3,7 +3,7 @@ header.masthead
     .small-10.small-centered.columns
       h1.masthead-title Protect Voting Rights
       h2.subtitle
-        | Pass the Voting Rights Ammendment Act 
+        | Pass the Voting Rights Ammendment Act
         span.subtitle-year
           | 2014
 section#petition.petition
@@ -11,8 +11,7 @@ section#petition.petition
     .medium-6.columns.medium-offset-1
       p.petition-summary The Supreme Court removed essential protections of the Voting Rights Act. But we can modernize and strengthen those protections by passing the Voting Rights Amendment Act of 2014.
       p.petition-cta Sign the petition and call your representative now!
-
-      = form_for @signature, remote: true, html: { class: "petition-form" } do |f|
+      = form_for @signature, html: { class: "petition-form" } do |f|
         .row
           .medium-6.columns
             .form-field
@@ -36,10 +35,11 @@ section#petition.petition
             = f.submit "Sign the Petition", class: "btn-primary"
           .medium-6.columns
             .fine-print
-              | Powered by Change.org. By signing, you accept Change.org’s 
+              | Powered by Change.org. By signing, you accept Change.org’s
               a terms of service
-              |  and 
+              |  and
               a privacy policy.
+
   .row
     .medium-11.columns.medium-offset-1
       .video-link-block
@@ -73,26 +73,26 @@ section#call-tool.call-tool
   .row
     .medium-7.columns
       .call-actions-container
-        form.zipcode-form.is-hidden
-          label.form-section-title for="zipcode" Enter your zip code
-          input.zipcode#zipcode type="text" pattern="\d*" placeholder="zip code"
-          button.btn-primary Submit
-        #call-box
+        = form_tag legislators_lookup_path, method: :get, remote: true, class: "zipcode-form" do
+          = label_tag :zipcode, "Enter your zip code", class: "form-section-title"
+          = text_field_tag :zipcode, nil, id: "zipcode", class: "zipcode", pattern: '\d*', placeholder: "zip code"
+          = button_tag "Submit", class: "btn-primary"
+        #call-box.is-hidden
           .row
             .medium-5.columns.divider
               .survey-form.is-hidden
                 p.form-section-title How'd It Go?
                 textarea#survey cols="5" placeholder=("Listened right away!...") rows="5"
                 button.btn-primary Send Feedback
-              form#new_call
+              = form_tag calls_path, method: :post, remote: true, id: "new_call is-hidden" do
                 p.form-section-title Call Using My Phone
                 p.form-section-description
                   | Enter your phone number and we'll connect you (free of charge) to Peter. Be sure to review the sample script.
                 .control-group
-                  input#call_area_code.input-mini.first maxlength="3" placeholder="555" type="text"
-                  input#call_prefix_number.input-mini maxlength="3" placeholder="555" type="text"
-                  input#call_line_number.input-mini.last maxlength="4" placeholder="5555" type="text"
-                input.btn.btn-submit.btn-primary type="submit" value=("Call Now")
+                  = text_field_tag :area_code, nil, id: "call_area_code", class: "input-mini first", maxlength: "3", placeholder: "555"
+                  = text_field_tag :prefix_number, nil, id: "call_prefix_number", class: "input-mini", maxlength: "3", placeholder: "555"
+                  = text_field_tag :line_number, nil, id: "call_line_number", class: "input-mini last", maxlength: "4", placeholder: "555"
+                  = submit_tag "Call Now", class: "btn btn-submit btn-primary"
             .medium-7.columns
               #rep-info.row
                 .small-5.columns
@@ -135,7 +135,7 @@ section#call-tool.call-tool
 /       li Requires all 50 states and their localities to give notice in local media and on the Internet of any actions related to significant election changes.
 /       li The bill is bipartisan, bicameral, and compliant with the Supreme Court's ruling.
 /       li
-/         | Read the Bill: 
+/         | Read the Bill:
 /         a href="https://www.govtrack.us/congress/bills/113/hr3899" target="_blank"
 /           | https://www.govtrack.us/congress/bills/113/hr3899
 
