@@ -39,7 +39,48 @@ class Legislator < ActiveRecord::Base
     legislators.select { |l| l.body.eql?("house") }
   end
 
-  def image
+  def image_url
     "/assets/legislators/#{self.bioguide_id}.jpg"
+  end
+
+  def fullname
+    [self.firstname, self.lastname].compact.join(' ')
+  end
+
+  def twitter_url
+    "https://twitter.com/#{self.twitter_id}" if self.twitter_id.present?
+  end
+
+  def facebook_url
+    "https://facebook.com/#{self.facebook_id}" if self.facebook_id.present?
+  end
+
+  def as_json(opts={})
+    {
+      id: self.id,
+      fullname: self.fullname,
+      congress_office: self.congress_office,
+      congresspedia_url: self.congresspedia_url,
+      district: self.district,
+      email: self.email,
+      facebook_url: self.facebook_url,
+      fax: self.fax,
+      fec_id: self.fec_id,
+      firstname: self.firstname,
+      gender: self.gender,
+      govtrack_id: self.govtrack_id,
+      lastname: self.lastname,
+      party: self.party,
+      phone: self.phone,
+      senate_class: self.senate_class,
+      state: self.state,
+      title: self.title,
+      twitter_url: self.twitter_url,
+      twitter_id: self.twitter_id,
+      webform: self.webform,
+      website: self.website,
+      youtube_url: self.youtube_url,
+      image_url: self.image_url
+    }
   end
 end
