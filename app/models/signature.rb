@@ -7,5 +7,7 @@ class Signature < ActiveRecord::Base
 
   def sign_change_petition
     ChangePetition.new.sign(self)
+  rescue Change::Exceptions::ChangeException => e
+    self.change_org_error = e.message
   end
 end

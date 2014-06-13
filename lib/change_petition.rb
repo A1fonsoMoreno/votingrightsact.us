@@ -5,9 +5,6 @@ class ChangePetition
 
   def sign(signature)
     petition.signatures.add_signature signatory_details_from_signature signature
-  rescue => e
-    signature.change_org_error = e.message
-    signature.save
   end
 
   def signature_count
