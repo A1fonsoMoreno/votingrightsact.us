@@ -1,3 +1,5 @@
+require "change_petition"
+
 class SignaturesController < ApplicationController
 
   def create
@@ -6,6 +8,10 @@ class SignaturesController < ApplicationController
     else
       respond_with_failure
     end
+  end
+
+  def count
+    render json: { count: ChangePetition.new.signature_count }
   end
 
   private

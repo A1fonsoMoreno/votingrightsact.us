@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :signatures, only: [:create]
+  resources :signatures, only: [:create] do
+    get :count, on: :collection
+  end
 
   resources :legislators, only: [:show] do
     post :call, on: :member
