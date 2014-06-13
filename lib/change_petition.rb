@@ -34,7 +34,7 @@ class ChangePetition
   end
 
   def petition_id
-    ENV.fetch('CHANGE_PETITION_ID')
+    ENV.fetch('CHANGE_PETITION_ID').to_i
   end
 
   def api_key

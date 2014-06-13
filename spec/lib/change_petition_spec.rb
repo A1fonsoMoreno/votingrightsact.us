@@ -1,9 +1,9 @@
 require "rubygems"
+require "faker"
 require "change_petition"
 
 describe ChangePetition do
   subject(:change_petition) { ChangePetition.new }
-  let(:petition_id) { "1234567890" }
   let(:change_api_key) { "1234567890" }
   let(:change_secret_token) { "asdfghjkl1234567890" }
   let(:change_petition_id) { "987654321" }
@@ -24,23 +24,23 @@ describe ChangePetition do
 
   let(:petition) {
     double(:petition, {
-      load: -> (petition_id) {},
       signatures: signatures_collection
     })
   }
 
   def stub_env_vars
-    ENV.stub(:fetch).with('CHANGE_API_ID').and_return(change_api_key)
-    ENV.stub(:fetch).with('CHANGE_AUTH_TOKEN').and_return(change_secret_token)
-    ENV.stub(:fetch).with('CHANGE_PETITION_ID').and_return(change_petition_id)
+    allow(ENV).to receive(:fetch).with('CHANGE_API_ID').and_return(change_api_key)
+    allow(ENV).to receive(:fetch).with('CHANGE_AUTH_TOKEN').and_return(change_secret_token)
+    allow(ENV).to receive(:fetch).with('CHANGE_PETITION_ID').and_return(change_petition_id)
   end
 
   def stub_petition
-    described_class::Petition.stub(:new).and_return(petition)
+    allow(described_class::Petition).to receive(:new).and_return(petition)
+    allow(petition).to receive(:load)
   end
 
   def stub_change_client
-    Change::Requests::Client.stub(:new).with({ api_key: change_api_key, secret_token: change_secret_token }).and_return(change_client)
+    allow(Change::Requests::Client).to receive(:new).with({ api_key: change_api_key, secret_token: change_secret_token }).and_return(change_client)
   end
 
   before do
@@ -52,10 +52,17 @@ describe ChangePetition do
   describe "#sign" do
     context "when an exception is not thrown" do
       it do
+        expect(petition).to receive(:load).with(change_petition_id.to_i)
+        expect(signatures_collection).to receive(:add_signature)
+        change_petition.sign(signature)
+      end
+
+      it do
         expect(Change::Requests::Client).to receive(:new).once
         expect(signatures_collection).to receive(:add_signature)
         change_petition.sign(signature)
       end
+
     end
 
     context "when an exception is thrown" do
