@@ -1,0 +1,35 @@
+.footer {
+  background-color: #fff;
+  color: #333;
+}
+
+.powered-by-title {
+  color: #333;
+  font-size: rem-calc(16);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.company {
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.change-org {
+  padding-top: 5px;
+}
+
+.powered-by-companies {
+  border-right: 2px dotted #aaa;
+  margin: 15px 0 !important;
+  padding: 0 15px 0 0;
+}
+
+.copyright-information {
+  margin: 55px 0 0;
+
+  p {
+    color: #8b8b8b;
+    font-size: rem-calc(12);
+  }
+}

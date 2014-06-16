@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20140610212519) do
     t.string   "lastname"
     t.string   "email"
     t.string   "zipcode"
-    t.text     "change_org_error", default: "f"
+    t.text     "change_org_error"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
