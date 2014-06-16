@@ -3,7 +3,6 @@ a {
 }
 
 .section-title {
-  border-bottom: 1px solid #fff;
   color: #fff;
   display: inline-block;
   font-size: 41px;
@@ -15,16 +14,25 @@ a {
   width: auto;
 
   &::before {
-    background-color: #000;
+    background: image-url("divider-white.png") no-repeat center;
     bottom: 0;
     content: ".";
-    font-size: rem-calc(40);
-    left: 50%;
+    color: transparent;
     line-height: .2;
     margin-bottom: -5px;
-    margin-left: -12px;
     padding: 0 5px 10px;
     position: absolute;
+    text-shadow: none;
+    width: 100%;
+  }
+
+  &.dark {
+    color: #6d6d6d;
+    text-shadow: none;
+
+    &::before {
+      background: image-url("divider-gray.png") no-repeat center;
+    }
   }
 }
 
