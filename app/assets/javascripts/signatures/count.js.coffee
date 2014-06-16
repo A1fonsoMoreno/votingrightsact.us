@@ -6,5 +6,5 @@ $ ->
     return
 
   loadSignatureCount()
-  setInterval loadSignatureCount, 5000
+  setInterval loadSignatureCount, 120000
   return

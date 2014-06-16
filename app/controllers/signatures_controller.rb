@@ -11,7 +11,7 @@ class SignaturesController < ApplicationController
   end
 
   def count
-    render json: { count: ChangePetition.new.signature_count }
+    render json: { count: ChangePetition.signature_count }
   end
 
   private

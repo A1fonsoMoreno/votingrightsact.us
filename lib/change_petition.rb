@@ -1,10 +1,21 @@
+require "rubygems"
 require "change-ruby"
 
 class ChangePetition
   include Change::Resources
 
+  class << self
+    def sign(*args)
+      new.sign(*args)
+    end
+
+    def signature_count
+      new.signature_count
+    end
+  end
+
   def sign(signature)
-    petition.signatures.add_signature signatory_details_from_signature signature
+    petition.signatures.add_signature(signatory_details_from_signature(signature), secret_token)
   end
 
   def signature_count
