@@ -20,9 +20,14 @@
 }
 
 .powered-by-companies {
-  border-right: 2px dotted #aaa;
+  border-bottom: 2px dotted #aaa;
   margin: 15px 0 !important;
   padding: 0 15px 0 0;
+
+  @media #{$medium-up} {
+    border-bottom: none;
+    border-right: 2px dotted #aaa;
+  }
 }
 
 .copyright-information {

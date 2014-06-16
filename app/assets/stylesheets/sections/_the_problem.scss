@@ -19,8 +19,12 @@
 .problem-quote-2 {
   position: absolute;
   right: 5%;
-  top: 500px;
+  top: 400px;
   width: 75%;
+
+  @media #{$medium-up} {
+    top: 500px;
+  }
 }
 
 .quote {
@@ -28,14 +32,19 @@
   color: white;
   color: #fff;
   font-family: "Futura Std", Futura, "Trebuchet MS", Arial, sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   font-style: italic;
   font-weight: bold;
   line-height: 1.2;
   padding: 0;
   text-transform: uppercase;
   text-shadow: 0 3px 10px rgba(0,0,0,.75);
+
+  @media #{$medium-up} {
+    font-size: rem-calc(26);
+  }
 }
+
 .quote-author {
   font-size: .8em;
   padding-right: 50px;

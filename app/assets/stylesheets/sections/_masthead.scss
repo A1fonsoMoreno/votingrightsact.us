@@ -4,9 +4,9 @@
 }
 
 .masthead-title {
-  border-bottom: 1px solid #fff;
+  @include transition(all .4s);
   color: #fff;
-  font-size: rem-calc(81);
+  font-size: rem-calc(22);
   font-family: "localFont-bold";
   letter-spacing: .033rem;
   line-height: .2;
@@ -16,17 +16,45 @@
   position: relative;
   text-align: justify;
 
+  @media (min-width: 555px) {
+    font-size: rem-calc(41);
+  }
+
+  @media (min-width: 655px) {
+    font-size: rem-calc(51);
+  }
+
+  @media (min-width: 755px) {
+    font-size: rem-calc(61);
+  }
+
+  @media (min-width: 838px) {
+    font-size: rem-calc(68);
+  }
+
+  @media (min-width: 922px) {
+    font-size: rem-calc(75);
+  }
+
+  @media #{$large-up} {
+    font-size: rem-calc(81);
+  }
+
   &::before {
-    background-color: #000;
+    background: image-url("divider-white.png") no-repeat center;
     bottom: 0;
     content: ".";
-    font-size: rem-calc(50);
-    left: 50%;
-    line-height: .4;
-    margin-bottom: -5px;
-    margin-left: -12px;
-    padding: 5px;
+    color: transparent;
+    line-height: .2;
+    margin-bottom: -10px;
+    padding: 0 5px 10px;
     position: absolute;
+    text-shadow: none;
+    width: 100%;
+
+    @media (min-width: 655px) {
+      background: image-url("divider-white-lg.png") no-repeat center;
+    }
   }
 
   &::after {
@@ -40,17 +68,27 @@
 
 .subtitle {
   color: #fff;
-  font-size: rem-calc(43);
+  font-size: rem-calc(20);
   letter-spacing: .013rem;
   margin: 0;
   position: relative;
   text-align: center;
 
-  .subtitle-year {
-    bottom: -33px;
+  @media (min-width: 755px) {
     font-size: rem-calc(33);
-    font-weight: 600;
-    position: absolute;
-    right: 9px;
+  }
+
+  @media #{$large-up} {
+    font-size: rem-calc(43);
+  }
+
+  .subtitle-year {
+    @media (min-width: 755px) {  
+      bottom: -33px;
+      font-size: rem-calc(33);
+      font-weight: 600;
+      position: absolute;
+      right: 9px;
+    }
   }
 }
