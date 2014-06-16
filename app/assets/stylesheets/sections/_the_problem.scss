@@ -1,4 +1,5 @@
 .the-problem {
+  @include box-shadow(0 9px 43px rgba(0,0,0,.52));
   background: #74a25a image-url("voting-lines.jpg");
   background-attachment: scroll;
   background-position: center top;

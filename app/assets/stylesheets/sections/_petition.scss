@@ -1,4 +1,5 @@
 .petition {
+  @include box-shadow(0 9px 43px rgba(0,0,0,.52));
   background: #000 image-url("Dr_Martin_Luther_King_jr.png") no-repeat bottom right;
   position: relative;
   z-index: 10;
