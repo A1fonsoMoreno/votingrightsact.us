@@ -6,7 +6,7 @@ a {
   color: #fff;
   display: inline-block;
   font-size: 41px;
-  font-weight: bold;
+  font-family: "localFont-bold";
   margin-bottom: 20px;
   position: relative;
   text-shadow: 0 3px 3px rgba(0,0,0,.75);
@@ -47,7 +47,7 @@ a {
 .form-section-title {
   color: #333;
   font-size: rem-calc(18);
-  font-weight: bold;
+  font-family: "localFont-bold";
   margin-bottom: 5px;
 }
 .form-section-description {
