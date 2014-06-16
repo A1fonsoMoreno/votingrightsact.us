@@ -29,6 +29,10 @@
   }
 }
 
+.petition-submitted {
+  @extend .petition-form;
+}
+
 .form-field {
   position: relative;
 

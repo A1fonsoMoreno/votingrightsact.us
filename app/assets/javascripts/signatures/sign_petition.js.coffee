@@ -1,6 +1,11 @@
 $ ->
   $("form.petition-form").asyncify (data) ->
-    $(this).addClass "is-hidden"
-    $(this).closest("div.petition-wrapper").find("p.thank-you-message").fadeIn "slow"
+    containerHeight = $(this).height();
+
+    $(this).fadeOut("slow").addClass("is-hidden")
+    $(".petition-submitted")
+      .height(containerHeight)
+      .fadeIn("slow")
+      .removeClass("is-hidden")
     $("#call_signature_id").val data.id
     return
