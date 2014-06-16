@@ -4,7 +4,9 @@ $row-width: rem-calc(1000);
 // Globals
 $body-bg: #000;
 $body-font-color: #fff;
-$body-font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "localFont", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family-semi-bold: "localFont-sbold", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family-bold: "localFont-bold", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $global-radius: 4px;
 
 // Forms
