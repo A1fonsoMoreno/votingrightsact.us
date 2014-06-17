@@ -16,7 +16,7 @@ $ ->
     loadRepresentativeInfo(repInfo)
   else
     $("form.zipcode-form").asyncify (data) ->
-      @addClass "is-hidden"
+      $(this).addClass "is-hidden"
       loadRepresentativeInfo(data)
       $.cookie('representativeInfo', JSON.stringify(data))
 
