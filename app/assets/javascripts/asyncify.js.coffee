@@ -1,19 +1,30 @@
 $ ->
-  AsynifyForm = init: (form, callback) ->
-    $form = $(form)
-    $action = $form.prop("action")
-    $method = $form.prop("method")
-    $form.on "submit", (e) ->
-      e.preventDefault()
-      $[$method]($action, $form.serialize()).then (data) ->
-        callback.call $form, data
-        return
 
-      return
+  `/*
+    * jQuery Asyncify v0.1
+    *
+    * @author Adam Cuppy
+    * @copyright Coding ZEAL (http://codingzeal.com)
+   */`
 
-    this
+  class AsynifyForm
+    constructor: (form, callback) ->
+      @form = $(form)
+      @callback = callback
+
+    action: ->
+      @form.prop('action')
+
+    method: ->
+      @form.prop('method')
+
+    bind: ->
+      @form.on "submit", (e) =>
+        e.preventDefault()
+        $[@method()](@action(), @form.serialize()).then (data) =>
+          @callback.call @form, data
 
   $.fn.asyncify = (callback) ->
     @each ->
-      AsynifyForm.init this, callback
+      new AsynifyForm(@, callback).bind()
       return
