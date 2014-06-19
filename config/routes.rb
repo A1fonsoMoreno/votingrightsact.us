@@ -7,9 +7,8 @@ Rails.application.routes.draw do
     post :call, on: :member
   end
 
-  resources :calls, only: :create do
+  resources :calls, only: [:create, :update] do
     member do
-      post :survey
       post :end
       get :progress
     end

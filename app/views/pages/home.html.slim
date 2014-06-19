@@ -85,13 +85,16 @@ section#call-tool.call-tool
             .medium-5.columns.divider
               .survey-form.is-hidden
                 p.form-section-title How'd It Go?
-                textarea#survey cols="5" placeholder=("Listened right away!...") rows="5"
-                button.btn-primary Send Feedback
+                = form_tag "#", method: :put, class: "call-survey" do
+                  = text_area_tag :survey, nil, cols: "5", rows: "5", id: "survey", placeholder: "Listened right away!..."
+                  = button_tag "Feedback", class: "btn-primary"
               .call-form
-                = form_tag calls_path, method: :post, remote: true, class: "new_call is-hidden" do
+                = form_tag calls_path, method: :post, class: "new_call is-hidden" do
                   p.form-section-title Call Using My Phone
                   p.form-section-description
-                    | Enter your phone number and we'll connect you (free of charge) to Peter. Be sure to review the sample script.
+                    | Enter your phone number and we'll connect you (free of charge) to
+                    span.legislator-name Peter
+                    |. Be sure to review the sample script.
                   .control-group
                     = text_field_tag :area_code, nil, id: "call_area_code", class: "input-mini first", maxlength: "3", placeholder: "555"
                     = text_field_tag :prefix_number, nil, id: "call_prefix_number", class: "input-mini", maxlength: "3", placeholder: "555"

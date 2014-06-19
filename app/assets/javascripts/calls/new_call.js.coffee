@@ -20,7 +20,11 @@ $ ->
       loadRepresentativeInfo(data)
       $.cookie('representativeInfo', JSON.stringify(data))
 
-  $("form.new_call").asyncify ->
+  $("form.new_call").asyncify (data) ->
     $(this).addClass "is-hidden"
     $(this).closest("#call-box").find("div.survey-form").removeClass "is-hidden"
+    $("form.call-survey").attr('action', "/calls/#{data.id}")
     return
+
+  $('form.call-survey').asyncify (data) ->
+

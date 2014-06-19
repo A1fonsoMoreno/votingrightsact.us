@@ -11,6 +11,14 @@ class CallsController < ApplicationController
     head :bad_request
   end
 
+  def update
+    @call = Call.find(params.fetch(:id))
+    @call.survey_body = params.fetch(:survey)
+    @call.save
+
+    head :ok
+  end
+
   def end
     @call = Call.find(params.fetch(:id))
     @call.end! params.fetch(:CallDuration)
@@ -22,14 +30,6 @@ class CallsController < ApplicationController
     @call = Call.find(params.fetch(:id))
 
     render json: { ended: @call.ended? }
-  end
-
-  def survey
-    @call = Call.find(params.fetch(:id))
-    @call.survey_body = params.fetch(:survey)
-    @call.save
-
-    head :ok
   end
 
   private
