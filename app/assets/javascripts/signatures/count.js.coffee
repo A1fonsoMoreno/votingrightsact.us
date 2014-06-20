@@ -1,9 +1,9 @@
 $ ->
+
   loadSignatureCount = ->
     $.getJSON "/signatures/count", (data) ->
-      $("#signature_count").html data.count
-      return
-    return
+      $(".signature-count").html(data.count)
+      $(".petition-count").removeClass("is-hidden")
 
   loadSignatureCount()
   setInterval loadSignatureCount, 120000
