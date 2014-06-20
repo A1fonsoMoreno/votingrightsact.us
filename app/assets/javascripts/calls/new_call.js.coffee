@@ -8,7 +8,7 @@ $ ->
     $("#rep-info p.stat a.facebook").prop "href", data.facebook_url
     $("#rep-info p.stat a.website").prop "href", data.website
     $("#rep-info p.stat a.telephone").prop("href", "tel:" + data.phone).html data.phone
-    $("#rep-info p.stat a.twitter").prop "href", "https://twitter.com/intent/tweet?text=As%20your%20constituent%20I%20ask%20you%20vote%20to%20pass%20the%20Voting%20Rights%Ammendment%20Act%20%40" + data.twitter_id
+    $("#rep-info p.stat a.twitter").prop "href", "http://twitter.com/intent/tweet?text=As%20your%20constituent%20I%20ask%20you%20vote%20to%20pass%20the%20Voting%20Rights%20Amendment%20Act%202014%20%40" + data.twitter_id
     $("#call_legislator_id").val data.id
 
   if $.cookie('representativeInfo')?
@@ -28,4 +28,3 @@ $ ->
     return
 
   $('form.call-survey').asyncify (data) ->
-
