@@ -80,4 +80,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => Rails.application.secrets.mandrill.fetch("user_name"),
+    :password  => Rails.application.secrets.mandrill.fetch("password"),
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => '', # your domain to identify your server when connecting
+  }
 end
