@@ -92,8 +92,8 @@ section#call-tool.call-tool
                 = form_tag calls_path, method: :post, class: "new_call is-hidden" do
                   p.form-section-title Call Using My Phone
                   p.form-section-description
-                    | Enter your phone number and we'll connect you (free of charge) to
-                    span.legislator-name Peter
+                    | Enter your phone number and we'll connect you (free of charge) to 
+                    span.legislator-name "your representative"
                     |. Be sure to review the sample script.
                   .control-group
                     = text_field_tag :area_code, nil, id: "call_area_code", class: "input-mini first", maxlength: "3", placeholder: "555"

@@ -4,6 +4,7 @@ $ ->
     $("#call-box, form.new_call").removeClass "is-hidden"
     $("#rep-info .rep-image-container img").prop "src", data.image_url
     $("#rep-info p.person").html data.fullname
+    $(".legislator-name").html data.fullname
     $("#rep-info p.stat a.facebook").prop "href", data.facebook_url
     $("#rep-info p.stat a.website").prop "href", data.website
     $("#rep-info p.stat a.telephone").prop("href", "tel:" + data.phone).html data.phone
