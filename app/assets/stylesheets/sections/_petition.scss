@@ -11,6 +11,17 @@
 
 .petition-summary {
   @extend .section-description;
+  margin-bottom: 10px;
+}
+
+.petition-count {
+  color: #bbb;
+  margin: 0;
+}
+.signature-count {
+  color: #fff;
+  font-family: $body-font-family-semi-bold;
+  font-size: rem-calc(30);
 }
 
 .petition-cta {
@@ -55,7 +66,7 @@
 }
 
 .video-link-block {
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 .video-link {

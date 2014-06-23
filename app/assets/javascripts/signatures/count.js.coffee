@@ -2,7 +2,8 @@ $ ->
 
   loadSignatureCount = ->
     $.getJSON "/signatures/count", (data) ->
-      $(".signature-count").html(data.count)
+      signatureCount = data.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      $(".signature-count").html(signatureCount)
       $(".petition-count").removeClass("is-hidden")
 
   loadSignatureCount()
