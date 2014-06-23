@@ -23,8 +23,10 @@ $ ->
 
   $("form.new_call").asyncify (data) ->
     $(this).addClass "is-hidden"
-    $(this).closest("#call-box").find("div.survey-form").removeClass "is-hidden"
+    $(this).closest("#call-box").find(".survey-form").removeClass "is-hidden"
     $("form.call-survey").attr('action', "/calls/#{data.id}")
     return
 
   $('form.call-survey').asyncify (data) ->
+    $('.survey-form').addClass "is-hidden"
+    $(this).closest("#call-box").find(".survey-form-response").removeClass "is-hidden"

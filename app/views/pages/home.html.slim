@@ -97,6 +97,8 @@ section#call-tool.call-tool
                 = form_tag "#", method: :put, class: "call-survey" do
                   = text_area_tag :survey, nil, cols: "5", rows: "5", id: "survey", placeholder: "Listened right away!..."
                   = button_tag "Feedback", class: "btn-primary"
+              .survey-form-response.is-hidden
+                p.form-section-title Thank you for taking the time to make a difference!
               .call-form
                 = form_tag calls_path, method: :post, class: "new_call is-hidden" do
                   p.form-section-title Call Using My Phone
@@ -107,7 +109,7 @@ section#call-tool.call-tool
                   .control-group
                     = text_field_tag :area_code, nil, id: "call_area_code", class: "input-mini first", maxlength: "3", placeholder: "555"
                     = text_field_tag :prefix_number, nil, id: "call_prefix_number", class: "input-mini", maxlength: "3", placeholder: "555"
-                    = text_field_tag :line_number, nil, id: "call_line_number", class: "input-mini last", maxlength: "4", placeholder: "555"
+                    = text_field_tag :line_number, nil, id: "call_line_number", class: "input-mini last", maxlength: "4", placeholder: "5555"
                     = hidden_field_tag :legislator_id, nil, id: "call_legislator_id"
                     = hidden_field_tag :signature_id, nil, id: "call_signature_id"
                     = submit_tag "Call Now", class: "btn btn-submit btn-primary"
