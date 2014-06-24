@@ -13,8 +13,10 @@ section#petition.petition
       p.petition-count.is-hidden
         span.signature-count
         |  people support the Voting Rights Amendment Act.
-      p.petition-cta Sign the petition and call your representative now!
       = form_for @signature, html: { class: "petition-form" } do |f|
+        .row
+          medium-12.columns
+            p.petition-cta Sign the petition and call your representative now!
         .row
           .medium-6.columns
             .form-field
