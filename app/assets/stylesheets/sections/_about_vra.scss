@@ -1,3 +1,32 @@
 .about-vra {
+  background-color: #e04d48;
   padding: 30px 0;
+
+  .section-header {
+    margin: 0 0 20px;
+    text-align: center;
+  }
+
+  .act-bullet-points {
+    list-style-type: none;
+  }
+
+  .read-bill {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #d25e4c;
+    font-family: localFont-sbold;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+
+    a {
+      color: tint(#d25e4c, 10%);
+
+      &:hover {
+        border-bottom: 1px solid #d25e4c;
+      }
+    }
+  }
 }

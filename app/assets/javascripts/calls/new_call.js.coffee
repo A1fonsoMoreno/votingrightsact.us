@@ -1,7 +1,7 @@
 $ ->
 
   loadRepresentativeInfo = (data) ->
-    $("#call-box, form.new_call").removeClass "is-hidden"
+    $("#call-box, form.new_call, .phone-script-block").removeClass "is-hidden"
     $("#rep-info .rep-image-container img").prop "src", data.image_url
     $("#rep-info p.person").html data.fullname
     $(".legislator-name").html data.fullname
