@@ -1,4 +1,5 @@
 class LegislatorsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:call]
 
   before_filter :ensure_zipcode, only: :show
   respond_to :json
