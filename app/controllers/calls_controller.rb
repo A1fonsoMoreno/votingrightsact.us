@@ -23,7 +23,7 @@ class CallsController < ApplicationController
 
   def end
     @call = Call.find(params.fetch(:id))
-    @call.end! params.fetch(:CallDuration)
+    @call.end! params.fetch(:CallDuration) unless @call.ended?
 
     head :ok
   end
