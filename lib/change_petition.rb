@@ -15,7 +15,12 @@ class ChangePetition
   end
 
   def sign(signature)
-    petition.signatures.add_signature(signatory_details_from_signature(signature), secret_token)
+    petition.signatures.add_signature(signatory_details_from_signature(signature), {
+      "auth_key" => secret_token,
+      "requester_email" => requester_email,
+      "source" => "votingrightsact.us",
+      "source_description" => "Voting Rights Amendment Act Page"
+    })
   end
 
   def signature_count
@@ -51,6 +56,10 @@ class ChangePetition
 
   def secret_token
     ENV.fetch('CHANGE_AUTH_TOKEN')
+  end
+
+  def requester_email
+    ENV.fetch('CHANGE_REQUESTER_EMAIL')
   end
 
   def signatory_details_from_signature(signature)
