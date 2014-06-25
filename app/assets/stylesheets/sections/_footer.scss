@@ -36,5 +36,13 @@
   p {
     color: #8b8b8b;
     font-size: rem-calc(12);
+
+    a {
+      color: currentColor;
+
+      &:hover {
+        border-bottom: 1px solid currentColor;
+      }
+    }
   }
 }
