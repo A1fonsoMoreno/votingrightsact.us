@@ -16,6 +16,7 @@ class LegislatorsController < ApplicationController
 
   def call
     @legislator = Legislator.find(params[:id])
+    @from = Rails.application.secrets.twilio.fetch("phone_number")
     render formats: :xml, layout: false
   end
 
