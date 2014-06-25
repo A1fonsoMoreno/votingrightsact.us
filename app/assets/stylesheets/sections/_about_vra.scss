@@ -9,23 +9,42 @@
 
   .act-bullet-points {
     list-style-type: none;
+    margin-top: 30px;
+
+    li {
+      background-position: top center;
+      background-repeat: no-repeat;
+      padding-top: 155px;
+      
+      &.violations {
+        background-image: image-url("icons/icon-5-violations.png");
+      }
+
+      &.us-map {
+        background-image: image-url("icons/icon-us-map.png");
+      }
+
+      &.handshake {
+        background-image: image-url("icons/icon-handshake.png");
+      }
+    }
   }
 
   .read-bill {
-    background-color: #fff;
-    border-radius: 10px;
-    color: #d25e4c;
-    font-family: localFont-sbold;
-    font-size: 18px;
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 40px;
     text-align: center;
 
     a {
-      color: tint(#d25e4c, 10%);
+      background-color: #fff;
+      border-radius: 10px;
+      color: #d25e4c;
+      font-family: localFont-sbold;
+      font-size: 22px;
+      padding: 15px 60px;
+      text-align: center;
 
       &:hover {
-        border-bottom: 1px solid #d25e4c;
+        background-color: #f5efe5;
       }
     }
   }
