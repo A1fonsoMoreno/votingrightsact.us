@@ -1,6 +1,8 @@
 require "calling_service"
 
 class CallsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:end, :progress]
+
   respond_to :json
 
   def create
