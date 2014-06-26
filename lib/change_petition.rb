@@ -15,7 +15,7 @@ class ChangePetition
   end
 
   def sign(signature)
-    petition.signatures.add_signature(signatory_details_from_signature(signature), auth_key)
+    petition.signatures.add_signature(signatory_details_from_signature(signature))
   end
 
   def signature_count
@@ -28,6 +28,11 @@ class ChangePetition
     @petition ||= begin
       petition = Petition.new(change_client)
       petition.load(petition_id)
+      petition.request_auth_key({
+        requester_email: requester_email,
+        source: "http://votingrightsact.us",
+        source_description: "Gathering signatures to help the petition"
+      })
       petition
     end
   end
