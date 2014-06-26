@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610212519) do
+ActiveRecord::Schema.define(version: 20140626225327) do
 
   create_table "calls", force: true do |t|
     t.string   "number"
@@ -65,9 +65,10 @@ ActiveRecord::Schema.define(version: 20140610212519) do
     t.string   "lastname"
     t.string   "email"
     t.string   "zipcode"
-    t.text     "change_org_error"
+    t.text     "change_org_error", default: "f"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
   end
 
 end

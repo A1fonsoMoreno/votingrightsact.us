@@ -3,7 +3,7 @@ header.masthead
     .small-10.small-centered.columns
       h1.masthead-title Protect Voting Rights
       h2.subtitle
-        | Pass the Voting Rights Amendment Act 
+        | Pass the Voting Rights Amendment Act
         span.subtitle-year
           | 2014
 section#petition.petition
@@ -27,10 +27,14 @@ section#petition.petition
               = f.label :lastname, "Last name"
               = f.text_field :lastname, placeholder: "Last name"
         .row
-          .medium-8.columns
+          .medium-4.columns
             .form-field
               = f.label :email, "Email"
               = f.text_field :email, placeholder: "Email"
+          .medium-4.columns
+            .form-field
+              = f.label :city, "City"
+              = f.text_field :city, placeholder: "City"
           .medium-4.columns
             .form-field
               = f.label :zipcode, "Zipcode"
@@ -40,9 +44,9 @@ section#petition.petition
             = f.submit "Sign the Petition", class: "btn-primary"
           .medium-6.columns
             .fine-print
-              | Powered by Change.org. By signing, you accept Change.org’s 
-              a href="http://www.change.org/about/terms-of-service" terms of service 
-              |  and 
+              | Powered by Change.org. By signing, you accept Change.org’s
+              a href="http://www.change.org/about/terms-of-service" terms of service
+              |  and
               a href="http://www.change.org/about/privacy" privacy policy.
         .row
           .small-8.columns.small-centered.hide-for-large-up
@@ -105,7 +109,7 @@ section#call-tool.call-tool
                 = form_tag calls_path, method: :post, class: "new_call is-hidden" do
                   p.form-section-title Call Using My Phone
                   p.form-section-description
-                    | Enter your phone number and we'll connect you (free of charge) to 
+                    | Enter your phone number and we'll connect you (free of charge) to
                     span.legislator-name "your representative"
                     |. Be sure to review the sample script.
                   .control-group
@@ -187,7 +191,7 @@ footer.footer
           = image_tag("logos/twilio.png", class: "company-logo", alt: "Twilio")
     .medium-4.columns
       .copyright-information
-        p 
-          | &copy; 2014 
+        p
+          | &copy; 2014
           a href="http://www.longdistancevoter.org" target="_blank"
             | Long Distance Voter

@@ -21,7 +21,7 @@ class SignaturesController < ApplicationController
   end
 
   def signature_params
-    params.require(:signature).permit(:firstname, :lastname, :email, :zipcode)
+    params.require(:signature).permit(:firstname, :lastname, :email, :city, :zipcode)
   end
 
   def signature_email

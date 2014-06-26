@@ -68,9 +68,10 @@ class ChangePetition
 
   def signatory_details_from_signature(signature)
     {
-      firstname: signature.firstname,
-      lastname: signature.lastname,
+      first_name: signature.firstname,
+      last_name: signature.lastname,
       email: signature.email,
+      city: signature.city,
       postal_code: signature.zipcode,
       country_code: 'US'
     }
