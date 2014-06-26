@@ -15,12 +15,7 @@ class ChangePetition
   end
 
   def sign(signature)
-    petition.signatures.add_signature(signatory_details_from_signature(signature), {
-      auth_key: auth_key,
-      requester_email: requester_email,
-      source: "http://votingrightsact.us",
-      source_description: "Voting Rights Amendment Act Microsite"
-    })
+    petition.signatures.add_signature(signatory_details_from_signature(signature), auth_key)
   end
 
   def signature_count
