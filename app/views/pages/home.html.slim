@@ -44,9 +44,9 @@ section#petition.petition
             = f.submit "Sign the Petition", class: "btn-primary"
           .medium-6.columns
             .fine-print
-              | Powered by Change.org. By signing, you accept Change.org’s
+              | Powered by Change.org. By signing, you accept Change.org’s 
               a href="http://www.change.org/about/terms-of-service" terms of service
-              |  and
+              |  and 
               a href="http://www.change.org/about/privacy" privacy policy.
         .row
           .small-8.columns.small-centered.hide-for-large-up
@@ -71,17 +71,47 @@ section#petition.petition
       iframe allowfullscreen="" frameborder="0" height="480" src="//www.youtube.com/embed/-AN4NZSROvs?rel=0" width="640"
     a.close-reveal-modal ×
 
-section#the-problem.the-problem
-  .problem-quote-1
-    blockquote.quote
-      | "In 2012, blacks and Hispanics waited nearly twice as long in line to vote on average than whites"
-      footer.quote-author
-        | - Massachusetts Institute of Technology
-  .problem-quote-2
-    blockquote.quote
-      | "At least 201,000 Florida voters did not cast ballots on Election Day 2012 because they were discouraged by long lines at polling places."
-      footer.quote-author
-        | - Orlando Sentinel
+/ section#the-problem.the-problem
+/   .problem-quote-1
+/     blockquote.quote
+/       | "In 2012, blacks and Hispanics waited nearly twice as long in line to vote on average than whites"
+/       footer.quote-author
+/         | - Massachusetts Institute of Technology
+/   .problem-quote-2
+/     blockquote.quote
+/       | "At least 201,000 Florida voters did not cast ballots on Election Day 2012 because they were discouraged by long lines at polling places."
+/       footer.quote-author
+/         | - Orlando Sentinel
+
+section#about-vra.about-vra
+  .row
+    .small-12.columns
+      .section-header
+        h2.section-title About the Act
+  .row
+    .small-12.columns
+      p The Voting Rights Act (VRA) is one of the most important pieces of civil rights legislation ever passed. But in 2013 the Supreme Court’s decision in Shelby County vs. Holder removed protections that required states with a history of discrimination to get federal approval before making election changes like moving polling places.
+      p However, the decision gave leaders in Congress the opportunity to create an updated VRA Amendment that will cover jurisdictions with recent evidence of discrimination. Introduced by Senator Patrick Leahy (D-Vt.) and Rep. Jim Sensenbrenner (R-Wisc.), the Voting Rights Amendment Act of 2014 will:
+  ul.act-bullet-points.row
+    li.violations.medium-4.columns Require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes like redistricting, changes in election procedures close to an election, and the movement of polling places. This new formula would currently apply to Georgia, Louisiana, Mississippi and Texas.
+    li.us-map.medium-4.columns Requires all 50 states and their localities to give notice in local media and on the Internet of any actions related to significant election changes.
+    li.handshake.medium-4.columns The bill is bipartisan, bicameral, and compliant with the Supreme Court's ruling.
+  .row
+    p.read-bill.small-12.columns
+      a href="https://www.govtrack.us/congress/bills/113/hr3899" target="_blank"
+        | Click Here to Read the Bill
+
+section#partners.partners
+  .row
+    .section-header
+      h2.section-title.dark Partners
+  .row
+    a.small-6.medium-2.columns.medium-offset-3 href="http://www.longdistancevoter.org" target="_blank"
+      = image_tag("logos/long-distance-voter-partner-logo.png", alt: "Long Distance Voter")
+    a.small-6.medium-2.columns href="http://www.headcount.org" target="_blank"
+      = image_tag("logos/headcount-logo.png", alt: "HeadCount")
+    a.small-6.medium-2.columns.medium-pull-3 href="http://www.lawyerscommittee.org" target="_blank"
+      = image_tag("logos/lawyers-committee-logo.png", alt: "Lawyers' Committee for Civil Rights Under Law")
 
 section#call-tool.call-tool
   .row
@@ -146,37 +176,6 @@ section#call-tool.call-tool
       .phone-script-block.is-hidden
         h3.form-section-title Here's a sample script:
         p "I’m calling to let you know that I support  H.R. 3899, The Voting Rights Amendment Act of 2014. This bipartisan bill will require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes.  As your constituent, I ask that you co-sponsor the VRA Amendment."
-
-section#partners.partners
-  .row
-    .section-header
-      h2.section-title.dark Partners
-  .row
-    a.small-6.medium-2.columns.medium-offset-3 href="http://www.longdistancevoter.org" target="_blank"
-      = image_tag("logos/long-distance-voter-partner-logo.png", alt: "Long Distance Voter")
-    a.small-6.medium-2.columns href="http://www.headcount.org" target="_blank"
-      = image_tag("logos/headcount-logo.png", alt: "HeadCount")
-    a.small-6.medium-2.columns.medium-pull-3 href="http://www.lawyerscommittee.org" target="_blank"
-      = image_tag("logos/lawyers-committee-logo.png", alt: "Lawyers' Committee for Civil Rights Under Law")
-
-
-section#about-vra.about-vra
-  .row
-    .small-12.columns
-      .section-header
-        h2.section-title About the Act
-  .row
-    .small-12.columns
-      p The Voting Rights Act (VRA) is one of the most important pieces of civil rights legislation ever passed. But in 2013 the Supreme Court’s decision in Shelby County vs. Holder removed protections that required states with a history of discrimination to get federal approval before making election changes like moving polling places.
-      p However, the decision gave leaders in Congress the opportunity to create an updated VRA Amendment that will cover jurisdictions with recent evidence of discrimination. Introduced by Senator Patrick Leahy (D-Vt.) and Rep. Jim Sensenbrenner (R-Wisc.), the Voting Rights Amendment Act of 2014 will:
-  ul.act-bullet-points.row
-    li.violations.medium-4.columns Require any state with five violations of federal voting rights law in the last 15 years to receive pre-clearance for any election changes like redistricting, changes in election procedures close to an election, and the movement of polling places. This new formula would currently apply to Georgia, Louisiana, Mississippi and Texas.
-    li.us-map.medium-4.columns Requires all 50 states and their localities to give notice in local media and on the Internet of any actions related to significant election changes.
-    li.handshake.medium-4.columns The bill is bipartisan, bicameral, and compliant with the Supreme Court's ruling.
-  .row
-    p.read-bill.small-12.columns
-      a href="https://www.govtrack.us/congress/bills/113/hr3899" target="_blank"
-        | Click Here to Read the Bill
 
 footer.footer
   .row
