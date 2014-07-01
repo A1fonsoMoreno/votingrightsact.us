@@ -40,5 +40,14 @@ describe Signature do
         end
       end
     end
+
+    describe "make_secure_key" do
+      before { subject.save! }
+
+      it do
+        expect(subject.secure_key).to be_a_kind_of String
+        expect(subject.secure_key.length).to eql 16
+      end
+    end
   end
 end
