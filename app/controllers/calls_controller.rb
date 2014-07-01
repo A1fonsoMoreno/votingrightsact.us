@@ -9,7 +9,8 @@ class CallsController < ApplicationController
     @call = CallingService.call(self, calling_service_params)
 
     respond_with @call, location: nil
-  rescue Twilio::REST::RequestError
+  rescue => e
+    logger.info e.inspect
     head :bad_request
   end
 
@@ -44,7 +45,7 @@ class CallsController < ApplicationController
     {
       number: phone_number,
       legislator_id: call_params.fetch(:legislator_id),
-      signature_id:  call_params.fetch(:signature_id)
+      signature_id:  signature.id
     }
   end
 
@@ -54,5 +55,9 @@ class CallsController < ApplicationController
     number += call_params.fetch(:prefix_number)
     number += call_params.fetch(:line_number)
     number
+  end
+
+  def signature
+    Signature.where(secure_key: call_params.fetch(:signature_id)).first
   end
 end

@@ -1,8 +1,13 @@
 $ ->
-  if $.cookie('signed')
+  setSignatureId = (id) ->
+    $("#call_signature_id").val id
+    $.cookie "signature", id
+
+  if $.cookie('signature')
     $('form.petition-form').addClass('is-hidden')
     $(".petition-submitted").show().removeClass('is-hidden')
-    $("#call_signature_id").val $.cookie('signed')
+    setSignatureId $.cookie('signature')
+
   else
     $("form.petition-form").asyncify (data) ->
       containerHeight = $(this).height()
@@ -12,7 +17,6 @@ $ ->
         .height(containerHeight)
         .fadeIn("slow")
         .removeClass("is-hidden")
-      $("#call_signature_id").val data.id
 
-      $.cookie "signed", data.id
+      setSignatureId data.secure_key
       return
