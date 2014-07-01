@@ -1,4 +1,6 @@
-## Voter Registration Act Petition
+## Voting Rights Act Petition Site
+
+http://votingrightsact.us
 
 #### Installation
 
