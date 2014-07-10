@@ -16,16 +16,24 @@ $ ->
     repInfo = JSON.parse($.cookie('representativeInfo'))
     loadRepresentativeInfo(repInfo)
   else
-    $("form.zipcode-form").asyncify (data) ->
-      $(this).addClass "is-hidden"
-      loadRepresentativeInfo(data)
-      $.cookie('representativeInfo', JSON.stringify(data))
+    $("form.zipcode-form").asyncify
+      before: (form) ->
+        $(form).find('input[type="submit"]').prop('disabled', true).val('Looking...')
 
-  $("form.new_call").asyncify (data) ->
-    $(this).addClass "is-hidden"
-    $(this).closest("#call-box").find(".survey-form").removeClass "is-hidden"
-    $("form.call-survey").attr('action', "/calls/#{data.id}")
-    return
+      then: (data) ->
+        $(this).addClass "is-hidden"
+        loadRepresentativeInfo(data)
+        $.cookie('representativeInfo', JSON.stringify(data))
+
+  $("form.new_call").asyncify
+    before: (form) ->
+      $(form).find('input[type="submit"]').prop('disabled', true).val('Calling...')
+
+    then: (data) ->
+      $(this).addClass "is-hidden"
+      $(this).closest("#call-box").find(".survey-form").removeClass "is-hidden"
+      $("form.call-survey").attr('action', "/calls/#{data.id}")
+      return
 
   $('form.call-survey').asyncify (data) ->
     $('.survey-form').addClass "is-hidden"

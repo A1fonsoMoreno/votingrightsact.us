@@ -3,6 +3,11 @@ $ ->
     $("#call_signature_id").val id
     $.cookie "signature", id
 
+  triggerZipCodeLookup = (zipcode) ->
+    return unless zipcode?
+    $('input#zipcode').val(zipcode)
+    $('form.zipcode-form').submit()
+
   if $.cookie('signature')
     $('form.petition-form').addClass('is-hidden')
     $(".petition-submitted").show().removeClass('is-hidden')
@@ -22,4 +27,5 @@ $ ->
           .removeClass("is-hidden")
 
         setSignatureId data.secure_key
+        triggerZipCodeLookup(data.zipcode)
         return
