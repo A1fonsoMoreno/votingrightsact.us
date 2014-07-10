@@ -9,14 +9,17 @@ $ ->
     setSignatureId $.cookie('signature')
 
   else
-    $("form.petition-form").asyncify (data) ->
-      containerHeight = $(this).height()
+    $("form.petition-form").asyncify
+      before: (form) ->
+        $(form).find('input[type="submit"]').prop('disabled', true).val('Submitting...')
 
-      $(this).fadeOut("slow").addClass("is-hidden")
-      $(".petition-submitted")
-        .height(containerHeight)
-        .fadeIn("slow")
-        .removeClass("is-hidden")
+      then: (data) ->
+        containerHeight = $(this).height()
+        $(this).fadeOut("slow").addClass("is-hidden")
+        $(".petition-submitted")
+          .height(containerHeight)
+          .fadeIn("slow")
+          .removeClass("is-hidden")
 
-      setSignatureId data.secure_key
-      return
+        setSignatureId data.secure_key
+        return
