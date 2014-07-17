@@ -1,0 +1,52 @@
+.we-need-vra {
+  background-color: #748E6B;
+  padding: 30px 0;
+
+  .section-header {
+    margin: 0 0 20px;
+    text-align: center;
+  }
+
+  .act-bullet-points {
+    list-style-type: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    li {
+      background-position: top center;
+      background-repeat: no-repeat;
+      padding-top: 155px;
+      
+      &.violations {
+        background-image: image-url("icons/icon-5-violations.png");
+      }
+
+      &.time-money {
+        background-image: image-url("icons/icon-time-money.png");
+      }
+
+      &.pie-chart {
+        background-image: image-url("icons/icon-pie-chart.png");
+      }
+    }
+  }
+
+  .read-bill {
+    margin-top: 10px;
+    text-align: center;
+
+    a {
+      background-color: #fff;
+      border-radius: 10px;
+      color: #748E6B;
+      font-family: localFont-sbold;
+      font-size: 22px;
+      padding: 15px 60px;
+      text-align: center;
+
+      &:hover {
+        background-color: #f5efe5;
+      }
+    }
+  }
+}
