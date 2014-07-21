@@ -1,0 +1,8 @@
+# .pairs - configuration for 'git pair'
+# place in project or home directory
+pairs:
+  ac: Adam Cuppy; adam
+  ty: Trever Yarrish; trever
+email:
+  prefix: pair
+  domain: codingzeal.com
